@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div class="loginBox">
+            <form id="mainLoginForm">
+                <p class="fieldName">Nazwa użytkownika</p>
+                <label for="username"><input type="text" class="username" id="userLogin"></label>
+                <p class="fieldName">Hasło</p>
+                <label for="password"><input type="text" class="password" id="userPass"></label><br>
+                <input type="submit" value="Zaloguj" id="loginFormBtn" class="btn btn-success">
+            </form>
+            <div class="shedderEmployeePanel">
+                <div class="box">Przejdź do panelu pracownika</div>
+            </div>
+        </div>
+        <div class="logoBox">
+            <div class="boxText">
+                <h2>System zarządzania zlecenami oraz raportowania produkcji</h2>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    
+    <script>
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyD7Wt5ValWKoGZkcL4fNjR6KZTqNDY7gZA",
+        authDomain: "ordersdb-6fd21.firebaseapp.com",
+        databaseURL: "https://ordersdb-6fd21-default-rtdb.firebaseio.com",
+        projectId: "ordersdb-6fd21",
+        storageBucket: "ordersdb-6fd21.appspot.com",
+        messagingSenderId: "704077897617",
+        appId: "1:704077897617:web:112897cee0ac87c7ca4430",
+        measurementId: "G-5X6B2RVPVP"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+
+    <script src="script/auth.js"></script>
+
+</body>
+</html>

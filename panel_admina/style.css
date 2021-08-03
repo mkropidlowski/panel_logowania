@@ -1,0 +1,256 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+    width: 100%;
+    height: 100%;
+    background-color:whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.orderContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.userBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:35%;
+}
+
+.userBox h5 {
+    margin-top: 10px;
+}
+
+.logoutImage {
+    cursor: pointer;
+}
+
+.nav {
+    width:30%;
+}
+
+.nav ul span:hover{
+    cursor: pointer;     
+}  
+
+.nav ul span li{
+    margin-top: 30px;
+    color:black;
+    list-style: none;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.liImgStyle {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.liImgStyle span {
+    margin-left: 5px;
+}
+
+.loadedContent {
+    width: 70%;
+
+}
+
+.staticBox {
+    margin-top: 15px;
+    background-color: rgb(192, 192, 192);
+    padding: 5px;
+}
+
+.hideBox {
+    display: none;
+}
+
+.dataBox > h6 {
+    background-color: #39998e;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 7px;
+    color:#fff;
+
+}
+
+.ordersListContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 2px solid gray;
+    
+}
+
+.ordersBox {
+    display: flex;
+    flex-direction: column;
+  
+} 
+
+.opBox {
+    width: 100%;
+}
+
+.operationList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+    background-color:#ffdc7c;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.box {
+    width:200px;
+    height: 200px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.box:nth-child(2) {
+    text-align: left;
+}
+
+.boxHeader {
+    width:200px;
+    text-align: center;
+    margin:10px 10px;
+    font-weight: bold;
+}
+
+.employeesBox {
+    margin-top:30px;
+}
+
+.employeesListContainer {
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #ffd699;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.employeesStyleBox{
+    width:200px;
+    
+}
+
+.employeesHeader {
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    border-top: 2px solid black;
+    font-weight: bold;
+    padding-top:10px;
+}
+
+.createNewOrder {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 30px;
+
+}
+.formField {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formLabel {
+    padding-left:10px ;
+}
+
+#addNewOrder {
+    margin-top:30px;
+    width:150px;
+}
+
+.detailedBox {
+    background-color:rgb(240, 240, 240);
+    padding: 5px;
+    width: 99%;
+    border-radius: 5px;
+}
+
+.listStyle {
+    list-style-type:circle;
+}
+
+.boxDetailsInfo {
+    text-align: left;
+}
+
+.progressBox {
+    margin-top: 30px;
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.addEmployee {
+    margin-top: 50px;
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+   
+
+}
+
+.employeeFormDiv {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    width:40%;
+}
+
+#addNewEmpBtn {
+    margin:20px 0 0 55px;
+    width:200px;
+}
+
+.removeImgBtn {
+    cursor:pointer;
+}
+
+.progressHeader {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.removeOrderBtn {
+    position: relative;
+    top:10px;
+    left: 150px;
+    cursor:pointer;
+}

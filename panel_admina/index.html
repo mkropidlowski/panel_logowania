@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+
+     <title>Panel zarządania</title>
+   
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="logo"><h3>PANEL ZARZĄDZANIA ZLECENIAMI</h3></div>
+            <div class="userBox"><h5 class="userName"></h5><img src="img/logout.png" class="logoutImage"></div>            
+        </div>
+
+        <div class="orderContainer">
+            <div class="nav">
+                <ul>
+                    <span class="ordersLink"><li class="liImgStyle"><img src="img/document.png"><span>Aktualne zlecenia</span></li></span>
+                    <span class="employees"><li class="liImgStyle"><img src="img/employee.png"><span>Pracownicy</span></li></span>
+                    <span class="progressDiagram"><li class="liImgStyle"><img src="img/report.png"><span>Zaraportowane zlecenia</span></li></span>
+                    <span class="performance"><li class="liImgStyle"><img src="img/growth.png"><span>Postęp zleceń</span></li></span>
+                    <span class="addNewOrderBtn"><li class="liImgStyle"><img src="img/add-file.png"><span>Dodaj nowe zlecenie</span></li></span>
+                    <span class="addNewEmployee"><li class="liImgStyle"><img src="img/follow.png"><span>Dodaj nowego pracownika</span></li></span>
+                </ul>
+
+            </div>
+
+            <div class="loadedContent">
+                <div class="ordersLink ordersBoxLink dataBox">
+                    <h6>Lista dostępnych zleceń</h6>
+                        <div class="ordersListContainer">
+                            <div class="boxHeader">Numer zlecenia</div>
+                            <div class="boxHeader">Operacje</div>
+                            <div class="boxHeader">Ilość sztuk</div>
+                            <div class="boxHeader">Inf. szczegółowe</div>
+                            
+                        </div>
+                        <div class="ordersBox">
+                        
+                        </div>
+                </div>
+                <div class="employeesListLink dataBox hideBox">
+                    <h6>Lista pracowników</h6>
+                    <div class="employeesHeader"><span>Numer ID</span><span>Imię i nazwisko</span><span>Stanowisko</span></div>
+                        <div class="employeesBox"></div>
+                </div>
+                <div class="diagramLink dataBox hideBox">
+                    <h6>Zaraportowane zlecenia</h6>
+                        <div class="ordersProgress">
+                            
+                        </div>
+                </div>
+                <div class="performanceBarLink dataBox hideBox" id="test">
+                    <h6>Postęp zleceń</h6>
+                        
+                    <div class="formField">
+                        <span class="labelText">Numer zlecenia:</span>
+                        <span class="formLabel">
+                            <select class="ordersListBox" onchange="ordersView();">
+                                <option>Wybierz zlecenie</option>
+                            </select>
+                        </span>
+                       
+                        <span class="labelText">Operacja:</span>
+                        <span class="formLabel">
+                            <select class="operationListBox" onchange="showCurrentQuantity();">
+                                <option>Wybierz operacje</option>
+                            </select>
+                        </span>
+                        <span><button class="refreshBtn btn btn-primary">Odśwież</button></span>
+                    </div>
+
+                   
+
+                    <div class="formField">
+                        <span class="orderFullInf">
+                            <p>Ilość sztuk w zleceniu: <b><span class="howMuchToDo"></span></b></p>
+                            <p>Wykonanych w wybranej operacji: <span class="currentValue"></span> | <span class="partSum"></span></p>
+                            <span class="viewPartsToDo"></span>
+                        </span>
+                    </div>
+
+
+
+                    
+                    <div class="performanceContainer">
+                            
+                        </div>
+                </div>
+              
+                <div class="createNewOrderLink dataBox hideBox">
+                    <h6>Dodaj nowe zlecenie</h6>
+                        <form class="createNewOrder">
+
+                            <div class="formField">
+                                <span class="labelText">Podaj numer zlecenia:</span>
+                                <span class="formLabel"><input type="text" class="newOrderNumber" placeholder="rr/0000-0000"></span>
+                            </div>
+                            <div class="formField">
+                                <b><span class="labelText">Operacje technologiczne: </span></b>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 10:</span>
+                                <span class="formLabel"><input type="text" class="opOne"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 20:</span>
+                                <span class="formLabel"><input type="text" class="opTwo"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 30:</span>
+                                <span class="formLabel"><input type="text" class="opThree"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 40:</span>
+                                <span class="formLabel"><input type="text" class="opFour"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 50:</span>
+                                <span class="formLabel"><input type="text" class="opFive"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 60:</span>
+                                <span class="formLabel"><input type="text" class="opSix"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Operacja 70:</span>
+                                <span class="formLabel"><input type="text" class="opSeven"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Ilość detali w zleceniu:</span>
+                                <span class="formLabel"><input type="number" class="quantityNumber"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Klient:</span>
+                                <span class="formLabel"><input type="text" class="clientName" placeholder="Nazwa klienta"></span>
+                            </div>
+                            <div class="formField">
+                                <span class="labelText">Data realizacji zlecenia:</span>
+                                <span class="formLabel"><input type="date" class="finalDate"></span>
+                            </div>
+                           
+        
+                            <input type="button" value="Dodaj" id="addNewOrder" class="btn btn-success">
+                        </form>
+                </div>
+
+
+                
+                <div class="addNewEmployeeLink dataBox hideBox">
+                    <h6>Dodaj nowego pracownika</h6>
+                        <form class="addEmployee">
+                            <div class="employeeFormDiv">
+                                <span class="employeelabel">ID:</span>
+                                <span class="employeeformLabel"><input type="text" class="employeeId" placeholder="PRXXX"></span>
+                            </div>
+                            <div class="employeeFormDiv">
+                                <span class="employeelabel">Imię:</span>
+                                <span class="employeeformLabel"><input type="text" class="employeeName" placeholder="Imię"></span>
+                            </div>
+                            <div class="employeeFormDiv">
+                                <span class="employeelabel">Nazwisko</span>
+                                <span class="employeeformLabel"><input type="text" class="employeeSurname" placeholder="Nazwisko"></span>
+                            </div>
+                            <div class="employeeFormDiv">
+                                <span class="employeelabel">Stanowisko:</span>
+                                <span class="employeeformLabel"><input type="text" class="employeePosition" placeholder="Operator/Ustawiacz"></span>
+                            </div>
+
+                            <input type="button" value="Dodaj" id="addNewEmpBtn" class="btn btn-success">
+                        </form>
+            
+                </div>
+            
+        </div>
+
+
+    </div>
+
+   
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    
+    <script>
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyD7Wt5ValWKoGZkcL4fNjR6KZTqNDY7gZA",
+        authDomain: "ordersdb-6fd21.firebaseapp.com",
+        databaseURL: "https://ordersdb-6fd21-default-rtdb.firebaseio.com",
+        projectId: "ordersdb-6fd21",
+        storageBucket: "ordersdb-6fd21.appspot.com",
+        messagingSenderId: "704077897617",
+        appId: "1:704077897617:web:112897cee0ac87c7ca4430",
+        measurementId: "G-5X6B2RVPVP"
+    };
+    // Initialize Firebase
+    
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+    <script src="script/userAuth.js"></script>
+    <script src="script/menu.js"></script>
+    <script src="script/ordersBox.js"></script>
+    <script src="script/employees.js"></script>
+    <script src="script/progress.js"></script>
+    <script src="script/addNewOrder.js"></script>
+    <script src="script/performance.js"></script>
+    <script src="script/addNewEmployee.js"></script>
+
+
+</body>
+
+</html>
+
+
