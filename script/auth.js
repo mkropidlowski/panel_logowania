@@ -1,5 +1,6 @@
 const mainLoginForm = document.querySelector('#mainLoginForm');
 const box = document.querySelector('.box');
+const wrongPassError = document.querySelector('.wrongPassError');
 
     mainLoginForm.addEventListener('submit', e => {
         e.preventDefault();
@@ -8,9 +9,11 @@ const box = document.querySelector('.box');
         const password = mainLoginForm['userPass'].value;
 
         auth.signInWithEmailAndPassword(email, password).then((res) => {
+            
             window.location.href = 'panel_admina/index.html';
+
         }).catch((err) => {
-            window.location.href = 'panel_logowania/index.html';
+           wrongPassError.innerHTML = 'Nieprawidłowe dane.';
         });
 
     })

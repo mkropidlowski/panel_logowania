@@ -17,12 +17,15 @@
     <div class="container">
         <div class="loginBox">
             <form id="mainLoginForm">
-                <p class="fieldName">Nazwa użytkownika</p>
+                <span class="fieldName">Nazwa użytkownika</span>
                 <label for="username"><input type="text" class="username" id="userLogin"></label>
-                <p class="fieldName">Hasło</p>
-                <label for="password"><input type="text" class="password" id="userPass"></label><br>
+                <span class="fieldName">Hasło</span>
+                <label for="password"><input type="password" class="password" id="userPass"></label><br>
                 <input type="submit" value="Zaloguj" id="loginFormBtn" class="btn btn-success">
+                <h6 class="wrongPassError"></h6>
+                
             </form>
+                
             <div class="shedderEmployeePanel">
                 <div class="box">Przejdź do panelu pracownika</div>
             </div>
