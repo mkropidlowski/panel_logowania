@@ -304,3 +304,22 @@ html, body {
     left: 150px;
     cursor:pointer;
 }
+
+.searchBox {
+    
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: white;
+    background-image: url('img/loupe.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;  
+  }
+  
+
+  .searchBox:focus {
+    border: 2px solid #ccc;
+    outline: none;
+  }

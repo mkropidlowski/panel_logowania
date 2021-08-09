@@ -1,4 +1,7 @@
 const ordersBox = document.querySelector('.ordersBox');
+const searchBox = document.querySelector('.searchBox');
+
+
 
 const additionDate = () => {
     const date = new Date();
@@ -24,6 +27,7 @@ db.collection('orders')
         const doc = change.doc;
         if(change.type === 'added'){
             ordersList(doc.data(), doc.id);
+           
         } else if(change.type === 'removed'){
             deleteOrder(doc.id);
         }
@@ -45,7 +49,7 @@ const ordersList = (n, id) => {
     n.operation.forEach(list => {
         ulTag.innerHTML += `<li class="listStyle" data-toggle="tooltip" data-placement="left" title="${list.description}"> ${list.op_num} ${list.op}</li>`;
     })
-// TAK TO ZOSTAWIAMY list.description
+
        
     const opBox = document.createElement('div');
     const operationList = document.createElement('div');
@@ -74,7 +78,7 @@ const ordersList = (n, id) => {
 
     restOrderInfo.classList.add('restOrderInfo');
     let html = `
-        <div><span><img class="removeOrderBtn" src="img/remove.png"></span></div>
+        <div><span><img class="removeOrderBtn" src="img/remove.png" alt="removeBtn" width="24px" height="24px"></span></div>
         <div class="box boxDetailsInfo">
             <p>Nazwa klienta: <b>${n.client_name}</b></p>  
             <p>Czas realizacji:</br><b>${n.final_date}</b></p>
@@ -82,15 +86,28 @@ const ordersList = (n, id) => {
         </div>
         
       `;
-    restOrderInfo.innerHTML = html;
-    operationList.appendChild(restOrderInfo);
+         
+    
+      restOrderInfo.innerHTML = html;
+      operationList.appendChild(restOrderInfo);
+  
+      ordersBox.appendChild(opBox); 
 
-    ordersBox.appendChild(opBox);
-
-
-           
-}   
-
+    searchBox.addEventListener('keyup', e =>{
+        const searchValue = e.target.value;
+     
+                document.querySelectorAll('.operationList').forEach(filterList => {
+                   const item = filterList.firstChild.textContent;
+                   if(item.indexOf(searchValue) != -1)
+                   {
+                       filterList.style.display = 'flex';
+                   } else {
+                        filterList.style.display = 'none';
+                   }
+                })
+          
+    })
+}
 
 const deleteOrder = (id) =>{
     const operationList = document.querySelectorAll('.operationList');
@@ -101,6 +118,7 @@ const deleteOrder = (id) =>{
         }
     })
 }
+
 
 
 ordersBox.addEventListener('click', e =>{
@@ -117,7 +135,5 @@ ordersBox.addEventListener('click', e =>{
             .catch(err => console.log(err));    
     }   
 })
-
-
 
 
