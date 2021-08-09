@@ -173,22 +173,54 @@ html, body {
 .createNewOrder {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 85%;
+    height: 100%;
     margin-top: 30px;
+    
 
 }
 .formField {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    padding: 15px;
+
+    /* display: flex;
+    justify-content: space-around;
+    flex-direction: column; */
 }
 
-.formLabel {
-    padding-left:10px ;
+.formField input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid lightslategray;
+    
+}
+.opTypeHeader h5 {
+    margin: 20px 0 20px;
+}
+
+
+.operationDesc {
+    width:200px;
+    height: 50px;
+}
+
+.operationInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.operationInfo input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid lightslategray;
+    
 }
 
 #addNewOrder {
-    margin-top:30px;
+    margin:30px 0 150px;
     width:150px;
 }
 
@@ -201,6 +233,24 @@ html, body {
 
 .listStyle {
     list-style-type:circle;
+    cursor: pointer;
+    position: relative;
+}
+
+.listStyle:hover {
+    font-weight: bold;
+}
+
+.listStyle[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: whitesmoke;
+    width: 200px;
+    padding: 5px;
+    margin-left: 20px;
+    border-radius: 5px;
+    z-index: 1;
+    
 }
 
 .boxDetailsInfo {

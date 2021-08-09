@@ -43,9 +43,9 @@ const ordersList = (n, id) => {
     const ulTag = document.createElement('ul');
     
     n.operation.forEach(list => {
-        ulTag.innerHTML += '<li class="listStyle">'+ list.op_num + ' '+ list.op + '</li>';
+        ulTag.innerHTML += `<li class="listStyle" data-toggle="tooltip" data-placement="left" title="${list.description}"> ${list.op_num} ${list.op}</li>`;
     })
-
+// TAK TO ZOSTAWIAMY list.description
        
     const opBox = document.createElement('div');
     const operationList = document.createElement('div');
