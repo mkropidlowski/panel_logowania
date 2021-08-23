@@ -11,7 +11,7 @@ const additionDate = () => {
 
      
        
-     m = date.getMinutes() < 10 ? '0' : '' + date.getMinutes();
+     m = date.getMinutes() < 10 ? '0' : + date.getMinutes();
     
      d = date.getDate();
      year = date.getFullYear();

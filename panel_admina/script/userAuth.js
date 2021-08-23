@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
     if(user) {
         userName.innerHTML = 'Zalogowano: ' +user.email;
     } else {
-        console.log('Wylogowano.');
+        window.location.href = '../';
     }
 })
 
